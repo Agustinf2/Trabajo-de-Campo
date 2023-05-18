@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a0e67a74c1874096a47eb151d85382c6" Name="Diagram1" ZoomLevel="73" >
+        <EntityTypeShape EntityType="Contexto.Usuario" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Contexto.Formulario" Width="1.5" PointX="3" PointY="4.625" />
+        <EntityTypeShape EntityType="Contexto.permiso" Width="1.5" PointX="5.25" PointY="4.875" />
+        <EntityTypeShape EntityType="Contexto.Perfil" Width="1.5" PointX="0.75" PointY="3.125" />
+        <AssociationConnector Association="Contexto.Formulariopermiso" />
+        <EntityTypeShape EntityType="Contexto.Ventas" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="Contexto.Detalle_ventas" Width="1.5" PointX="7.5" PointY="1.375" />
+        <EntityTypeShape EntityType="Contexto.Articulos" Width="1.5" PointX="6.625" PointY="7.375" />
+        <AssociationConnector Association="Contexto.PerfilUsuario" />
+        <AssociationConnector Association="Contexto.PerfilFormulario" />
+        <AssociationConnector Association="Contexto.UsuarioVentas" />
+        <AssociationConnector Association="Contexto.ArticulosDetalle_ventas" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="Contexto.VentasDetalle_ventas" />
+        <EntityTypeShape EntityType="Contexto.Proveedores" Width="1.5" PointX="9.125" PointY="6" />
+        <EntityTypeShape EntityType="Contexto.sysdiagrams" Width="1.5" PointX="0.75" PointY="7.75" />
+        <AssociationConnector Association="Contexto.FK__Proveedor__id_ar__02FC7413" />
+        <EntityTypeShape EntityType="Contexto.Detalle_OrdenCom" Width="1.5" PointX="7.625" PointY="10.875" />
+        <EntityTypeShape EntityType="Contexto.Orden_Compra" Width="1.5" PointX="11.75" PointY="8.5" IsExpanded="true" />
+        <AssociationConnector Association="Contexto.FK__Detalle_O__id_ar__08B54D69" />
+        <AssociationConnector Association="Contexto.FK__Orden_Com__id_pr__05D8E0BE" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
