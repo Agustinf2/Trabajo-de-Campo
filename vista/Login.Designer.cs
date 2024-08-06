@@ -43,23 +43,27 @@
             // 
             // txtpass
             // 
-            this.txtpass.Location = new System.Drawing.Point(151, 189);
+            this.txtpass.AccessibleRole = System.Windows.Forms.AccessibleRole.Document;
+            this.txtpass.Location = new System.Drawing.Point(166, 191);
             this.txtpass.Name = "txtpass";
-            this.txtpass.Size = new System.Drawing.Size(120, 20);
+            this.txtpass.Size = new System.Drawing.Size(136, 20);
             this.txtpass.TabIndex = 1;
             this.txtpass.UseSystemPasswordChar = true;
             // 
             // txtuser
             // 
-            this.txtuser.Location = new System.Drawing.Point(151, 138);
+            this.txtuser.AccessibleRole = System.Windows.Forms.AccessibleRole.Document;
+            this.txtuser.Location = new System.Drawing.Point(166, 140);
             this.txtuser.Name = "txtuser";
-            this.txtuser.Size = new System.Drawing.Size(120, 20);
+            this.txtuser.Size = new System.Drawing.Size(136, 20);
             this.txtuser.TabIndex = 0;
             // 
             // btnini
             // 
+            this.btnini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnini.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnini.Location = new System.Drawing.Point(25, 283);
+            this.btnini.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnini.Location = new System.Drawing.Point(46, 311);
             this.btnini.Name = "btnini";
             this.btnini.Size = new System.Drawing.Size(117, 42);
             this.btnini.TabIndex = 2;
@@ -69,9 +73,10 @@
             // 
             // label1
             // 
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Document;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 140);
+            this.label1.Location = new System.Drawing.Point(52, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 3;
@@ -79,9 +84,10 @@
             // 
             // label2
             // 
+            this.label2.AccessibleRole = System.Windows.Forms.AccessibleRole.Document;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 187);
+            this.label2.Location = new System.Drawing.Point(47, 189);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 4;
@@ -90,7 +96,8 @@
             // btnclose
             // 
             this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclose.Location = new System.Drawing.Point(158, 283);
+            this.btnclose.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnclose.Location = new System.Drawing.Point(179, 311);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(123, 42);
             this.btnclose.TabIndex = 5;
@@ -101,7 +108,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(311, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(379, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(368, 334);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -121,18 +128,18 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(30, 38);
+            this.label4.Location = new System.Drawing.Point(45, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(251, 31);
             this.label4.TabIndex = 18;
             this.label4.Text = "Tejidos San Primo";
             // 
-            // login
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(691, 388);
+            this.ClientSize = new System.Drawing.Size(822, 458);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -142,7 +149,7 @@
             this.Controls.Add(this.btnini);
             this.Controls.Add(this.txtuser);
             this.Controls.Add(this.txtpass);
-            this.Name = "login";
+            this.Name = "Login";
             this.Text = "login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

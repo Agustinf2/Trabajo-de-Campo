@@ -70,7 +70,7 @@ namespace vista
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            Registro frm = new Registro(3);
+             Registro frm = new Registro(3);
             frm.Show();            
         }
 

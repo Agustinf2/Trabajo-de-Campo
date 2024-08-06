@@ -45,5 +45,11 @@ namespace vista
             AgregarOC frm = new AgregarOC();
             frm.Show();
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            GestionarVentas frm = new GestionarVentas();
+            frm.Show();
+        }
     }
 }

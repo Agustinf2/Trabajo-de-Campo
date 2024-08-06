@@ -49,7 +49,7 @@ namespace vista
             // btnvta
             // 
             this.btnvta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnvta.Location = new System.Drawing.Point(82, 368);
+            this.btnvta.Location = new System.Drawing.Point(199, 368);
             this.btnvta.Name = "btnvta";
             this.btnvta.Size = new System.Drawing.Size(145, 45);
             this.btnvta.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace vista
             // btnestado
             // 
             this.btnestado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnestado.Location = new System.Drawing.Point(279, 368);
+            this.btnestado.Location = new System.Drawing.Point(396, 368);
             this.btnestado.Name = "btnestado";
             this.btnestado.Size = new System.Drawing.Size(145, 45);
             this.btnestado.TabIndex = 2;
@@ -78,7 +78,7 @@ namespace vista
             this.Controls.Add(this.btnvta);
             this.Controls.Add(this.dataGridView1);
             this.Name = "GestionarVentas";
-            this.Text = "GestionarVentas";
+            this.Text = "ho";
             this.Load += new System.EventHandler(this.GestionarVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

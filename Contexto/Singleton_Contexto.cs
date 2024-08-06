@@ -9,6 +9,7 @@ namespace Contexto
     public class Singleton_Contexto
     {
         private static Singleton_Contexto _instancia;
+        private static readonly object _lock = new object();
         private static ContextoContainer _contexto;
 
         private Singleton_Contexto() { }
@@ -17,8 +18,14 @@ namespace Contexto
         {
             if (_instancia == null)
             {
-                _instancia = new Singleton_Contexto();
-                _contexto = new ContextoContainer();
+                lock (_lock)
+                {
+                    if (_instancia == null)
+                    {
+                        _instancia = new Singleton_Contexto();
+                        _contexto = new ContextoContainer();
+                    }
+                }
             }
             return _instancia;
         }

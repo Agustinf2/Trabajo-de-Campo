@@ -45,5 +45,10 @@ namespace vista
         {
 
         }
+
+        private void AgregarProv_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

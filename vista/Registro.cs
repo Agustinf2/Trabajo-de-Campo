@@ -39,20 +39,20 @@ namespace vista
             }
             
         }
-
+       /* (txtdni.Text.Length == 8)*/
         public bool valdni()
         {
             bool validador = false;
-            if (txtdni.Text.Length == 8)
+            if (!int.TryParse(txtdni.Text, out int dni) || txtdni.Text is null)
             {
-                validador = true;
-            }
-            else
-            {
-                MessageBox.Show("El dni debe tener 8 caracteres");
+                MessageBox.Show("Debe ingresar el DNI del cliente");
                 txtdni.Focus();
                 validador = false;
                 return false;
+            }
+            else
+            {
+                validador = true;
             }
 
             if(txtdni.Text.All(char.IsDigit)&&validador==true)
@@ -127,7 +127,7 @@ namespace vista
 
         }
 
-        public bool existmail()
+       /* public bool existmail()
         {
             string CMD = string.Format("select count(Email) from Usuarios where Email='{0}'",txtmail.Text);
             DataSet DS = Controladora.sql_consulta.Ejecutar(CMD);
@@ -142,14 +142,57 @@ namespace vista
                 MessageBox.Show("Ya existe un usuario creado con ese mail");
                 return false;
             }
-        }
+        }*/
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e )
         {
-            
-            if (valinom()&&valitel()&&valdni()&& ValidacionEMAIL(txtmail.Text)&& existmail() && valicontra())
+            string CMD = string.Format("select count(Email) from Usuarios where Email='{0}'", txtmail.Text);
+            DataSet DA = Controladora.sql_consulta.Ejecutar(CMD);
+            int validador = Convert.ToInt32(DA.Tables[0].Rows[0][0]);
+
+            //Valida Datos Cliente
+            if (string.IsNullOrWhiteSpace(txtname.Text))
             {
-                Contexto.Usuario usuario = new Contexto.Usuario();
+                MessageBox.Show("Debe ingresar el nombre del cliente","Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+            }
+            if (!int.TryParse(txtdni.Text, out int dni) || txtdni.Text is null)
+            {
+                MessageBox.Show("Debe ingresar el DNI del cliente", "Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtmail.Text) )
+            {
+                MessageBox.Show("Debe ingresar el email del cliente", "Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            // Valida Email Cliente
+            if (validador != 0)
+            {
+                MessageBox.Show("El mail ingresado ya existe", "Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //Valida Telefono cliente
+            if (!int.TryParse(txtphone.Text, out int telefono) || txtphone.Text is null)
+            {
+                MessageBox.Show("Debe ingresar el telefono del cliente", "Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //Valida Contraseña cliente
+            if (txtpass.Text != txtpass2.Text || txtpass.Text == "")
+            {
+                MessageBox.Show("Las contraseñas no coinciden", "Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return ;
+            }
+            if (txtpass.Text.Length <= 8)
+            {
+                MessageBox.Show("Las contraseñas deben ser de 8 caracteres minimo", "Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            //if (valinom()&&valitel()&&valdni()&& ValidacionEMAIL(txtmail.Text)&& existmail() && valicontra())
+            //{ 
+            Contexto.Usuario usuario = new Contexto.Usuario();
                 usuario.Nombre = txtname.Text;
                 usuario.DNI = txtdni.Text;
                 usuario.Email = txtmail.Text;             
@@ -167,7 +210,7 @@ namespace vista
 
                 MessageBox.Show("Usuario creado con exito");
                 this.Close();
-            }
+            //}
 
         }
     }
